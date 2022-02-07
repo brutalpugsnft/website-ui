@@ -1,3 +1,4 @@
+// Navbar component
 const menu = document.querySelector("#mobile-menu");
 const menuLinks = document.querySelector(".navbar__menu");
 
@@ -13,8 +14,6 @@ const accordionItemHeaders = document.querySelectorAll(
 
 accordionItemHeaders.forEach((accordionItemHeader) => {
   accordionItemHeader.addEventListener("click", (event) => {
-    // Uncomment in case you only want to allow for the display of only one collapsed item at a time!
-
     const currentlyActiveAccordionItemHeader = document.querySelector(
       ".accordion-item-header.active"
     );
