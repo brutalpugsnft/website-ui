@@ -573,11 +573,6 @@ section .section__btn {
   background-size: cover;
 }
 
-.faqs_main_container {
-  background: #111011;
-  padding: 20px;
-}
-
 .heading_2 {
   font-weight: 800;
   font-size: 84px;
@@ -600,117 +595,52 @@ section .section__btn {
 
 /* Faqs Section */
 
-container {
-  margin: 0 auto;
-  padding: 4rem;
-  width: 48rem;
+.faqs_container {
+  background-color: #FF416C;
 }
-
-.accordion .accordion-item {
-  border-bottom: 1px solid #ffffff;
+.accordion {
+  width: 90%;
+  max-width: 1000px;
+  margin: 2rem auto;
 }
-
-.accordion .accordion-item button[aria-expanded="true"] {
-  border-bottom: 1px solid #03b5d2;
+.accordion-item {
+  background-color: #fff;
+  color: #111;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.25);
 }
-
-.accordion button {
+.accordion-item-header {
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  min-height: 3.5rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
   position: relative;
-  display: block;
-  text-align: left;
-  width: 100%;
-  padding: 1em 0;
-  color: #7288a2;
-  font-size: 1.15rem;
-  font-weight: 400;
-  border: none;
-  background: none;
-  outline: none;
-}
-
-.accordion button:hover,
-.accordion button:focus {
   cursor: pointer;
-  color: #03b5d2;
 }
-
-.accordion button:hover::after,
-.accordion button:focus::after {
-  cursor: pointer;
-  color: #03b5d2;
-  border: 1px solid #03b5d2;
-}
-
-.accordion button .accordion-title {
-  padding: 1em 1.5em 1em 0;
-}
-
-.accordion button .icon {
-  display: inline-block;
+.accordion-item-header::after {
+  content: "\002B";
+  font-size: 2rem;
   position: absolute;
-  top: 18px;
-  right: 0;
-  width: 22px;
-  height: 22px;
-  border: 1px solid;
-  border-radius: 22px;
+  right: 1rem;
 }
-
-.accordion button .icon::before {
-  display: block;
-  position: absolute;
-  content: "";
-  top: 9px;
-  left: 5px;
-  width: 10px;
-  height: 2px;
-  background: currentColor;
+.accordion-item-header.active::after {
+  content: "\2212";
 }
-.accordion button .icon::after {
-  display: block;
-  position: absolute;
-  content: "";
-  top: 5px;
-  left: 9px;
-  width: 2px;
-  height: 10px;
-  background: currentColor;
-}
-
-.accordion button[aria-expanded="true"] {
-  color: #03b5d2;
-}
-.accordion button[aria-expanded="true"] .icon::after {
-  width: 0;
-}
-.accordion button[aria-expanded="true"] + .accordion-content {
-  opacity: 1;
-  max-height: 9em;
-  transition: all 200ms linear;
-  will-change: opacity, max-height;
-}
-.accordion .accordion-content {
-  opacity: 0;
+.accordion-item-body {
   max-height: 0;
   overflow: hidden;
-  transition: opacity 200ms linear, max-height 200ms linear;
-  will-change: opacity, max-height;
+  transition: max-height 0.2s ease-out;
 }
-.accordion .accordion-content p {
-  font-size: 1rem;
-  font-weight: 450;
-  margin: 2em 0;
-  color: white;
-  padding-top: 10px;
-  padding-bottom: 10px;
+.accordion-item-body-content {
+  padding: 1rem;
+  line-height: 1.5rem;
+  border-top: 1px solid;
+  border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
 }
 
-/* Our Goals List */
-.para_2_goals {
-  color: white;
-  padding-top: 10px;
-  font-weight: bold;
-}
 /*  Rarity */
 
 .rarity_li li {

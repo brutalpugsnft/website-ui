@@ -7,18 +7,31 @@ menu.addEventListener("click", function () {
 });
 
 // for the faqs section
-const items = document.querySelectorAll(".accordion button");
+const accordionItemHeaders = document.querySelectorAll(
+  ".accordion-item-header"
+);
 
-function toggleAccordion() {
-  const itemToggle = this.getAttribute("aria-expanded");
+accordionItemHeaders.forEach((accordionItemHeader) => {
+  accordionItemHeader.addEventListener("click", (event) => {
+    // Uncomment in case you only want to allow for the display of only one collapsed item at a time!
 
-  for (i = 0; i < items.length; i++) {
-    items[i].setAttribute("aria-expanded", "false");
-  }
+    const currentlyActiveAccordionItemHeader = document.querySelector(
+      ".accordion-item-header.active"
+    );
+    if (
+      currentlyActiveAccordionItemHeader &&
+      currentlyActiveAccordionItemHeader !== accordionItemHeader
+    ) {
+      currentlyActiveAccordionItemHeader.classList.toggle("active");
+      currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
+    }
 
-  if (itemToggle == "false") {
-    this.setAttribute("aria-expanded", "true");
-  }
-}
-
-items.forEach((item) => item.addEventListener("click", toggleAccordion));
+    accordionItemHeader.classList.toggle("active");
+    const accordionItemBody = accordionItemHeader.nextElementSibling;
+    if (accordionItemHeader.classList.contains("active")) {
+      accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+    } else {
+      accordionItemBody.style.maxHeight = 0;
+    }
+  });
+});
