@@ -8,6 +8,11 @@
 html {
   scroll-behavior: smooth;
 }
+
+a {
+  text-decoration: none;
+}
+
 .navbar {
   background: #131313;
   height: 80px;
